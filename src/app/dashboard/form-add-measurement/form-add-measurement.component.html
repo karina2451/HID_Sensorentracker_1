@@ -3,9 +3,9 @@ color="{{ showNewMeasurementForm ? 'rgba(106, 156, 184)' : 'rgb(124, 180, 213)'}
 text="{{ showNewMeasurementForm ? 'Formular schließen' : 'Neuen Messwert hinzufügen'}}"
 (buttonClicked)="toggleNewMeasurementForm()">
 </app-button-add-measurement>
-<!--
-  <div class="measurementForm">  
--->
+
+  <div>  
+
 
     <form class="measurementForm" [formGroup]="newMeasurementForm" (ngSubmit)="onSubmit()" *ngIf="showNewMeasurementForm">
 <h2>Neuen Messwert hinzufügen</h2>
@@ -51,6 +51,6 @@ text="{{ showNewMeasurementForm ? 'Formular schließen' : 'Neuen Messwert hinzuf
 
 
     </form>
-    <!--
+    
   </div>      
-    -->
+

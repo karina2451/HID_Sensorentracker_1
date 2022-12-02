@@ -9,15 +9,29 @@
     color: rgba(106, 156, 184);
     background-color: rgba(199, 230, 249, 0.32);
     box-shadow: 2px 2px 2px rgba(36, 64, 82, 0.525);
-    margin: 30px 30px 30px 30px;
+    margin: 30px;
+    margin-left: 100px;
     border: none;
     width: fit-content;
-    
 
-    .error {
+    mat-form-field {
+      background-color: rgb(214, 240, 255);
+      color: rgba(13, 48, 70, 0.981);
+    }
+
+
+    
+    mat-label {
+        color: rgba(13, 48, 70, 0.981);
+    }
+
+    mat-error {
         color: red;
         font-size: 12px;
     }
+
+
+
 
     input, select {
 
@@ -37,13 +51,14 @@
     }
 
     button {
-    background-color: rgba(106, 156, 184);
+    background-color: rgb(196, 230, 250);
     color: rgba(13, 48, 70, 0.981);
     border-color: rgba(13, 48, 70, 0.981);
     font-size: 16px;
     padding: 10px;
     width: 350px;
     cursor: pointer;
+    margin-bottom: 20px;
     
     &:hover {
         border-color: rgb(124, 180, 213);
@@ -54,5 +69,9 @@
 
 h2 {
 
+    color: rgba(13, 48, 70, 0.981);
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
 }
 
