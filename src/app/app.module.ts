@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -46,7 +47,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
     MatIconModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
