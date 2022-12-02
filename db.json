@@ -188,6 +188,55 @@
       "humidity": 68,
       "date": "2022-08-03",
       "id": 29
+    },
+    {
+      "sensorId": 3,
+      "temperature": "55",
+      "humidity": "99",
+      "date": "2022-11-30T23:00:00.000Z",
+      "id": 30
+    },
+    {
+      "sensorId": 3,
+      "temperature": "55",
+      "humidity": "99",
+      "date": "2022-11-30T23:00:00.000Z",
+      "id": 31
+    },
+    {
+      "sensorId": 1,
+      "temperature": "11",
+      "humidity": "11",
+      "date": "2022-11-30T23:00:00.000Z",
+      "id": 32
+    },
+    {
+      "sensorId": 2,
+      "temperature": "33",
+      "humidity": "33",
+      "date": "2022-12-01T23:00:00.000Z",
+      "id": 33
+    },
+    {
+      "sensorId": 1,
+      "temperature": "22",
+      "humidity": "22",
+      "date": "2022-11-30T23:00:00.000Z",
+      "id": 34
+    },
+    {
+      "sensorId": 1,
+      "temperature": "44",
+      "humidity": "44",
+      "date": "2022-11-30T23:00:00.000Z",
+      "id": 35
+    },
+    {
+      "sensorId": 2,
+      "temperature": "44",
+      "humidity": "44",
+      "date": "2022-12-07T23:00:00.000Z",
+      "id": 36
     }
   ],
   "sensors": [

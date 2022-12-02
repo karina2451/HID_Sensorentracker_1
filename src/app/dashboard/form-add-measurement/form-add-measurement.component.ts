@@ -17,7 +17,7 @@ export class FormAddMeasurementComponent implements OnInit {
 
   ngOnInit(): void {
     this.newMeasurementForm = this.formBuilder.group({
-      sensorId: [0, [Validators.required]],
+      sensorId: [null, [Validators.required]],
       temperature: ['', [
         Validators.required,
         Validators.minLength(1),
@@ -35,15 +35,28 @@ export class FormAddMeasurementComponent implements OnInit {
     })
   }
 
+  getErrorMessage() {
+    if (this.newMeasurementForm.temperature.hasError('required')) {
+      return 'Bitte geben Sie einen Temperaturwert an.'
+    }
+    return ''
+  }
+
   async onSubmit() {
     if (this.newMeasurementForm?.valid) {
       await this.backendService.addSensorData(this.newMeasurementForm.value);
       this.newMeasurementForm.reset();
     }
+    this.backendService.getSensorData;
+    this.refresh();
   }
 
   toggleNewMeasurementForm() {
     this.showNewMeasurementForm = !this.showNewMeasurementForm;
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
 
 }

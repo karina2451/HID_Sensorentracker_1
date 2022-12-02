@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   public title: string = 'Sensorentracker';
-  public imagePath:string = "./../assets/images/sensor_icon.png"
+  public imagePath: string = "./../assets/images/sensor_icon.png"
 
   constructor() { }
 
