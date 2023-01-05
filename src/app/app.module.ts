@@ -22,7 +22,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -50,7 +50,8 @@ import { MatInputModule } from '@angular/material/input';
     MatDatepickerModule,
     MatPaginatorModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -237,6 +237,20 @@
       "humidity": "44",
       "date": "2022-12-07T23:00:00.000Z",
       "id": 36
+    },
+    {
+      "sensorId": 2,
+      "temperature": "54",
+      "humidity": "63",
+      "date": "1999-03-01T23:00:00.000Z",
+      "id": 37
+    },
+    {
+      "sensorId": 1,
+      "temperature": "32",
+      "humidity": "32",
+      "date": "2023-01-01T23:00:00.000Z",
+      "id": 38
     }
   ],
   "sensors": [

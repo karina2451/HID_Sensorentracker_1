@@ -35,13 +35,6 @@ export class FormAddMeasurementComponent implements OnInit {
     })
   }
 
-  getErrorMessage() {
-    if (this.newMeasurementForm.temperature.hasError('required')) {
-      return 'Bitte geben Sie einen Temperaturwert an.'
-    }
-    return ''
-  }
-
   async onSubmit() {
     if (this.newMeasurementForm?.valid) {
       await this.backendService.addSensorData(this.newMeasurementForm.value);
@@ -57,6 +50,10 @@ export class FormAddMeasurementComponent implements OnInit {
 
   refresh(): void {
     window.location.reload();
+  }
+
+  checkFormValidity(): boolean {
+    return !this.newMeasurementForm.valid;
   }
 
 }

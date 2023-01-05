@@ -1,12 +1,12 @@
-<app-button-add-measurement color="{{ showNewMeasurementForm ? 'rgba(106, 156, 184)' : 'rgb(124, 180, 213)'}}"
-    text="{{ showNewMeasurementForm ? 'Formular schließen' : 'Neuen Messwert hinzufügen'}}"
+<app-button-add-measurement
+    text="{{ showNewMeasurementForm ? 'Formular schließen' : 'Neuen Messwert erfassen'}}"
     (buttonClicked)="toggleNewMeasurementForm()">
 </app-button-add-measurement>
 
 <div>
     <form class="measurementForm" [formGroup]="newMeasurementForm" (ngSubmit)="onSubmit()"
         *ngIf="showNewMeasurementForm">
-        <h2>Neuen Messwert hinzufügen</h2>
+        <h2>Neuen Messwert erfassen</h2>
 
         <mat-form-field appearance="fill">
             <mat-label>Bitte Sensor auswählen</mat-label>
@@ -14,16 +14,15 @@
                 <mat-option *ngFor="let item of storeService.sensors" [value]="item.id">
                     {{item.name}}
                 </mat-option>
-
             </mat-select>
             <mat-error *ngIf="newMeasurementForm.controls['sensorId'].errors?.required">Bitte wählen Sie einen Sensor
                 aus.</mat-error>
         </mat-form-field>
         <br>
+
         <mat-form-field appearance="fill">
             <mat-label>Datum (MM/DD/YYYY)</mat-label>
             <input matInput formControlName="date" [matDatepicker]="picker" required>
-
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <mat-error *ngIf="newMeasurementForm.controls['date'].errors?.required">Bitte geben Sie ein Datum an.
@@ -32,12 +31,8 @@
         <br>
 
         <mat-form-field appearance="fill">
-
             <mat-label>Temperatur (in °C)</mat-label>
             <input matInput formControlName="temperature" placeholder="Temperatur" required>
-
-
-
             <mat-error *ngIf="newMeasurementForm.controls['temperature'].errors?.required">Bitte geben Sie einen
                 Temperaturwert an.</mat-error>
             <mat-error
@@ -45,10 +40,9 @@
                 Der Temperaturwert muss zwischen -50°C und 60°C liegen.</mat-error>
             <mat-error *ngIf="newMeasurementForm.controls['temperature'].errors?.minLength">Die Eingabe muss mindestens
                 ein Zeichen beinhalten.</mat-error>
-
-
         </mat-form-field>
         <br>
+
         <mat-form-field appearance="fill">
             <mat-label>Luftfeuchtigkeit (in %)</mat-label>
             <input matInput formControlName="humidity" placeholder="Luftfeuchtigkeit" required>
@@ -62,11 +56,9 @@
                 Der Luftfeuchtigkeitswert muss zwischen 0 und 100 liegen.</mat-error>
         </mat-form-field>
         <br>
-        <button mat-raised-button type="submit">
+
+        <button mat-raised-button type="submit" [disabled]="checkFormValidity()">
             Erfassen
         </button>
-
-
     </form>
-
 </div>

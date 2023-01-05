@@ -51,8 +51,8 @@
     }
 
     button {
-        background-color: rgb(196, 230, 250);
-        color: rgba(13, 48, 70, 0.981);
+        background-color: rgba(13, 48, 70, 0.981);
+        color: rgb(196, 230, 250);
         border-color: rgba(13, 48, 70, 0.981);
         font-size: 16px;
         padding: 10px;
@@ -62,6 +62,11 @@
 
         &:hover {
             border-color: rgb(124, 180, 213);
+        }
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: auto;
         }
 
     }
@@ -74,3 +79,4 @@ h2 {
     font-weight: bold;
     text-align: center;
 }
+

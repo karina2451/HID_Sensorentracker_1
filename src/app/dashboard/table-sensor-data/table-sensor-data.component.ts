@@ -4,6 +4,8 @@ import { StoreService } from 'src/app/shared/store.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { SensorData } from 'src/app/SensorData';
+import { MatSort, Sort } from '@angular/material/sort';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-table-sensor-data',
@@ -12,12 +14,13 @@ import { SensorData } from 'src/app/SensorData';
 })
 export class TableSensorDataComponent implements OnInit {
 
-  constructor(public storeService: StoreService, private backendService: BackendService) { }
+  constructor(public storeService: StoreService, private backendService: BackendService, private _liveAnnouncer: LiveAnnouncer) { }
 
-  displayedColumns: string[] = ['name', 'date', 'temperature', 'humidity', 'location'];
+  displayedColumns: string[] = ['name', 'date', 'temperature', 'humidity', 'location', 'position', 'delete'];
   dataSource!: MatTableDataSource<SensorData>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   async ngOnInit() {
     await this.backendService.getSensors();
@@ -25,5 +28,14 @@ export class TableSensorDataComponent implements OnInit {
 
     this.dataSource = new MatTableDataSource(this.storeService.sensorData);
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  announceSortChange(sortState: Sort) {
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared');
+    }
   }
 }
