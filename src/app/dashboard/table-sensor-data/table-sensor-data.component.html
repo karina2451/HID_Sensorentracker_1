@@ -32,8 +32,8 @@
 
     <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let row">
-            <button>
+        <td mat-cell *matCellDef="let item">
+            <button class="delete-button" (click)="deleteSensorData(item.id)">
                 <mat-icon>delete</mat-icon>
             </button>
         </td>

@@ -38,4 +38,10 @@ export class TableSensorDataComponent implements OnInit {
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
+
+  async deleteSensorData(id: number) {
+    await this.backendService.deleteSensorData(id);
+    await this.backendService.getSensorData;
+    window.location.reload();
+  }
 }
