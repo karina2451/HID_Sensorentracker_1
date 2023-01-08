@@ -41,7 +41,14 @@ export class TableSensorDataComponent implements OnInit {
 
   async deleteSensorData(id: number) {
     await this.backendService.deleteSensorData(id);
+    this.refreshSensorDataTable();
+  }
+
+  async refreshSensorDataTable() {
     await this.backendService.getSensorData;
-    window.location.reload();
+    const dataArray: SensorData[] = this.storeService.getSensorData;
+    this.dataSource = new MatTableDataSource(dataArray)
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 }

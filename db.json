@@ -191,27 +191,6 @@
     },
     {
       "sensorId": 2,
-      "temperature": "33",
-      "humidity": "33",
-      "date": "2022-12-01T23:00:00.000Z",
-      "id": 33
-    },
-    {
-      "sensorId": 1,
-      "temperature": "22",
-      "humidity": "22",
-      "date": "2022-11-30T23:00:00.000Z",
-      "id": 34
-    },
-    {
-      "sensorId": 1,
-      "temperature": "44",
-      "humidity": "44",
-      "date": "2022-11-30T23:00:00.000Z",
-      "id": 35
-    },
-    {
-      "sensorId": 2,
       "temperature": "54",
       "humidity": "63",
       "date": "1999-03-01T23:00:00.000Z",
@@ -223,6 +202,41 @@
       "humidity": "32",
       "date": "2023-01-01T23:00:00.000Z",
       "id": 38
+    },
+    {
+      "sensorId": 2,
+      "temperature": "13",
+      "humidity": "13",
+      "date": "2023-01-07T23:00:00.000Z",
+      "id": 41
+    },
+    {
+      "sensorId": 2,
+      "temperature": "11",
+      "humidity": "11",
+      "date": "2023-01-03T23:00:00.000Z",
+      "id": 42
+    },
+    {
+      "sensorId": 3,
+      "temperature": "10",
+      "humidity": "10",
+      "date": "2023-01-04T23:00:00.000Z",
+      "id": 43
+    },
+    {
+      "sensorId": 3,
+      "temperature": "21",
+      "humidity": "21",
+      "date": "2023-01-04T23:00:00.000Z",
+      "id": 44
+    },
+    {
+      "sensorId": 1,
+      "temperature": "5",
+      "humidity": "5",
+      "date": "2023-01-04T23:00:00.000Z",
+      "id": 45
     }
   ],
   "sensors": [

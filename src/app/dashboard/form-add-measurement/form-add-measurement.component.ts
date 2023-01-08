@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { BackendService } from 'src/app/shared/backend.service';
 import { StoreService } from 'src/app/shared/store.service';
+import { TableSensorDataComponent } from '../table-sensor-data/table-sensor-data.component';
 
 @Component({
   selector: 'app-form-add-measurement',
@@ -39,17 +40,13 @@ export class FormAddMeasurementComponent implements OnInit {
     if (this.newMeasurementForm?.valid) {
       await this.backendService.addSensorData(this.newMeasurementForm.value);
       this.newMeasurementForm.reset();
+      this.showNewMeasurementForm = false;
     }
-    this.backendService.getSensorData;
-    this.refresh();
+    window.location.reload();
   }
 
   toggleNewMeasurementForm() {
     this.showNewMeasurementForm = !this.showNewMeasurementForm;
-  }
-
-  refresh(): void {
-    window.location.reload();
   }
 
   checkFormValidity(): boolean {
